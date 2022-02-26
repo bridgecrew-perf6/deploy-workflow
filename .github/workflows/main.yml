@@ -20,4 +20,4 @@ jobs:
         uses: appleboy/ssh-action@master
         with:
           password: ${{ secrets.PASSWORD }}
-        run: ssh-copy-id ubuntu@192.168.5.96
+          script: ssh-copy-id ubuntu@192.168.5.96
