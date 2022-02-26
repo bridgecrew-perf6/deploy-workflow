@@ -17,10 +17,9 @@ jobs:
         run: ansible-galaxy collection install -U shubhamtatvamasi.magma
         
       - name: ssh
-        uses: appleboy/ssh-action@master
+        uses: garygrossgarten/github-action-ssh@release
         with:
+          command: ls -a
           host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
-          port: ${{ secrets.PORT }}
-          script: ls
+          username: ubuntu
+          privateKey: ${{ secrets.PRIVATE_KEY}}
